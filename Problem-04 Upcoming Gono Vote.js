@@ -1,16 +1,17 @@
 function gonoVote(array){
-    if(typeof (array)==="array"){
+    if(Array.isArray(array)){
+        
+        if(array===undefined || array===null){
+            return "Invalid"
+        }
+
         let yes=0;
         let no=0;
-        if(array===undefined || array===null){
-            return "Invaid"
-        }
-        for(let i=0;i<array.length;i++){
-            if(typeof array[i]!=="string"){
+        for(let arr of array){
+
+             if(typeof arr !=="string"){
                 return "Invalid"
             }
-        }
-        for(let arr of array){
             if(arr==="ha"){
                 yes++
             }
@@ -25,7 +26,7 @@ function gonoVote(array){
             return false
         }
         else{
-            return "Equal"
+            return "equal"
         }
         
     }
